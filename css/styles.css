@@ -1,0 +1,410 @@
+/*
+*
+Variables
+*
+*/
+
+:root {
+    --color-blue: #2720de;
+    --color-green: #86e5e8;
+    --color-orange: #e226d2;
+    --color-red:red;
+    --color-black:black;
+
+}
+
+body {
+    background:linear-gradient(45deg, blue, red);
+    font-family: 'Kristen', sans-serif;
+}
+
+
+/*
+*
+Header
+*
+*/
+
+.header {
+    background:radial-gradient(circle at center, rgb(2, 2, 2) 0, rgb(47, 120, 169), rgb(0, 0, 0) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.header__image {
+    width: 100px;
+    border-radius: 50%;
+
+}
+
+.header__link {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.header__link--blue {
+    background-color: var(--color-blue);
+    color: #ffffff;
+}
+
+.header__link--grey {
+    background-color: #f4f4f4;
+    color: var(--color-blue);
+}
+
+@media screen and (max-width: 800px) {
+    .header__link--blue {
+        display: none;
+    }
+}
+
+
+/*
+*
+Flux
+*
+*/
+
+.flux {
+    color:rgb(83, 218, 255);
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*
+*
+Texts
+*
+*/
+
+.t-title {
+    font-size: 40px;
+}
+
+.t-title strong {
+    color: var(--color-green)
+}
+
+.t-link {
+    color: var(--color-blue);
+    font-weight: 600;
+}
+
+
+/*
+*
+Cover
+*
+*/
+
+.cover {
+    background-color: var(--color-black);
+    padding-bottom: 30px;
+    padding-top: 120px;
+    position: relative;
+}
+
+.cover__flux {
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+.fanfan{
+    width: 50%;
+    display: block;
+    position: relative;
+   text-align: right;
+}
+.cover__video {
+    color: #cf83bc;
+    position: absolute;
+    top: 50px;
+    left: -100px;
+    width:380px;
+    height: 200%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+}
+
+.cover__container-texts,
+.cover__container-images {
+    width: 50%;
+}
+
+.cover__container-texts {
+    padding-right: 120px;
+}
+
+.cover__title {
+    font-style: italic;
+    font: size 60px;
+    font-weight: 800;
+    margin-left: -290px;
+}
+
+.cover__introduction {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    margin-left:-150px;
+}
+.cover__container-images {
+    position: relative;
+}
+
+.cover__image {
+    position: relative;
+    border-radius: 50%;
+}
+
+.cover__image:first-child {
+    bottom: 0;
+    right: 0;
+    width: 95%;
+    height: auto;
+}
+
+.cover__image:first-child:hover {
+    transform-origin: bottom right;
+    transform: rotate(5deg) scale(1.1) translateX(50px);
+}
+
+.cover__image:last-child {
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+}
+
+
+/* a partir de la je gere le responsive du site 800px = tablette portrait */
+
+@media screen and (max-width: 800px) {
+    .cover__flux {
+        flex-direction: column;
+    }
+}
+
+
+/* 450px = mobile */
+
+@media screen and (max-width: 450px) {
+    .cover {
+        background-color: white;
+    }
+    .cover__video {
+        display: none;
+    }
+    .cover__container-images {
+        display: none;
+    }
+}
+
+
+/*
+*
+Offers
+*
+*/
+
+.offers {
+    padding: 100px 0;
+}
+
+.offers__title {
+    width: 75%;
+    margin-bottom: 25px;
+    margin-top: -90px;
+}
+
+.offers__introduction {
+    background-color: #cf83bc;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(45, 11, 239);
+    margin-bottom: 50px;
+}
+
+.offers__introduction span {
+    font-size: 25px;
+}
+
+.offers__list {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(18, 246, 41);
+}
+
+
+/* Start : Card-offer */
+
+.card-offer {
+    width:45%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 103px 56px rgba(121,106,222,0.75);
+}
+
+.card-offer__container-title {
+    background-color: #cf9fc6;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.card-offer__icon {
+    width: 45px;
+    margin-right: 10px;
+}
+
+.card-offer__title {
+    color: var(--color-blue)
+}
+
+.card-offer__description {
+    padding: 20px 10px 10px 10px;
+}
+
+
+/* End : Card-offer */
+
+
+/*
+*
+Services
+*
+*/
+
+.services__title {
+    width: 75%;
+    margin-bottom: 50px;
+}
+
+.bloc-service {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.bloc-service:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.bloc-service:nth-child(even) .bloc-service__container-texts {
+    padding-left: 2.5%;
+}
+
+.bloc-service:nth-child(odd) .bloc-service__container-texts {
+    padding-right: 5%;
+}
+
+.bloc-service__container-texts,
+.bloc-service__image {
+    width: 50%;
+}
+
+.bloc-service__title {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.bloc-service__title span {
+    color: var(--color-orange);
+}
+
+.bloc-service__description {
+    margin-bottom: 15px;
+}
+
+
+/*
+*
+Testimonies
+*
+*/
+
+.testimonies__title {
+    margin-bottom: 50px;
+}
+
+.testimonies__container {
+    position: relative;
+}
+
+.testimonies__video {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 50px);
+    object-fit: cover;
+    z-index: -1;
+    bottom: 0;
+}
+
+.testimonies__list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+
+/* BLOCK : Card User */
+
+.card-user {
+    width: 30%;
+    background-color: rgb(237, 184, 234);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 52px 5px rgba(0, 0, 0, 0.16);
+}
+
+.card-user__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-user__avatar {
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border: solid 5px var(--color-green)
+}
+
+.card-user__informations {
+    margin-left: 10px;
+}
+
+.card-user__name {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.card-user__job {
+    margin-bottom: 15px;
+}
+
+.card-user__key-points {
+    color: grey
+}
+
+.card-user__quote {
+    color: rgb(237, 33, 226);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
